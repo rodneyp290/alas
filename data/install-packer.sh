@@ -1,11 +1,12 @@
-pushd /data/
-sudo pacman -Sq --needed --noconfirm wget git expac jshon
+pushd /vagrant/data/
+pacman -S --needed --noconfirm base-devel sudo wget git expac jshon
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 sudo -u vagrant mkdir packer
 cd packer
 wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 mv PKGBUILD?h=packer PKGBUILD
 sudo -u vagrant makepkg
-sudo pacman -U --noconfirm packer-20150808-1-any.pkg.tar.xz
+pacman -U --noconfirm `ls packer*.pkg.*`
 cd ..
-sudo rm -dR packer
+rm -dR packer
 popd  

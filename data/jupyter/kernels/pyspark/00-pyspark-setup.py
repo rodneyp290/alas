@@ -6,7 +6,7 @@ pyspark_submit_args = os.environ.get("PYSPARK_SUBMIT_ARGS","")
 if not "pyspark-shell" in pyspark_submit_args :
     pyspark_submit_args += " pyspark-shell"
 os.environ["PYSPARK_SUBMIT_ARGS"]= pyspark_submit_args
-spark_home = os.environ.get('SPARK_HOME', None)
+spark_home = os.environ.get('SPARK_HOME', '/opt/apache-spark')
 sys.path.insert(0, spark_home + "/python")
 # Add the py4j to the path.
 # You may need to change the version number to match your install
