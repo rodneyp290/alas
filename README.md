@@ -1,5 +1,7 @@
-# alas
-ALAS - Arch Linux Apache Spark using a Virtual Box provisioned by Vagrant 
+# ALAS - Arch Linux Apache Spark 
+Files for setting up an Arch Linux environment with Apache Spark, 
+with either Vagrant or Docker
+
 
 ## Current State of Project, and direction
 Currently Setup for a machine with > 10gb
