@@ -1,12 +1,12 @@
 {
- "language": "python2",
- "argv": [
-  "python",
-  "-m",
-  "ipykernel",
-  "--profile=pyspark",
-  "-f",
-  "{connection_file}"
- ],
- "display_name": "pySpark (Spark 1 .6.1)"
+  "language": "python",
+  "argv": [
+    "python",
+    "-m",
+    "ipykernel",
+    "--profile=pyspark",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "pySpark (Spark 1 .6.1)"
 }
