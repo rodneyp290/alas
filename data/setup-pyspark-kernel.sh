@@ -1,6 +1,6 @@
 sudo jupyter kernelspec install /vagrant/data/jupyter/kernels/pyspark
-mkdir -p $HOME/.ipython/profile_pyspark/startup/
-cp /vagrant/data/jupyter/kernels/pyspark/00-pyspark-setup.py $HOME/.ipython/profile_pyspark/startup/
+mkdir -p /home/vagrant/.ipython/profile_pyspark/startup/
+cp /vagrant/data/jupyter/kernels/pyspark/00-pyspark-setup.py /home/vagrant/.ipython/profile_pyspark/startup/
 
 echo spark.cores.max				4 	> /etc/apache-spark/spark-defaults.conf
 echo spark.driver.memory			6g 	>> /etc/apache-spark/spark-defaults.conf
