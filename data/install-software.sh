@@ -1,5 +1,7 @@
 pushd /vagrant/data/
-pacman -Sq --needed --noconfirm python2-pip jupyter-notebook ipython2-notebook apache-ant jdk7-openjdk polkit
+pacman -Sq --needed --noconfirm python2-pip python-pip jupyter-notebook ipython2-notebook apache-ant jdk7-openjdk polkit
+pip install py4j
+pip2 install py4j
 
 sudo -u vagrant packer -G --noconfirm --noedit hadoop
 ls
@@ -10,7 +12,7 @@ ls
 pacman -U --noconfirm `ls *.pkg.*`
 cd ..
 rm -r hadoop{,.tar.gz}
-sudo -u vagrant packer -G --noconfirm --noedit apache-spark 
+sudo -u vagrant packer -G --noconfirm --noedit apache-spark
 ls
 chmod 777 apache-spark
 cd apache-spark
