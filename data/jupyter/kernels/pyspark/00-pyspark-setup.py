@@ -1,15 +1,10 @@
 # Configure the necessary Spark environment
+# Simplified based on https://github.com/KristianHolsheimer/pyspark-setup-guide
 import os
 import sys
 
-pyspark_submit_args = os.environ.get("PYSPARK_SUBMIT_ARGS","")
-if not "pyspark-shell" in pyspark_submit_args :
-    pyspark_submit_args += " pyspark-shell"
-os.environ["PYSPARK_SUBMIT_ARGS"]= pyspark_submit_args
-spark_home = os.environ.get('SPARK_HOME', '/opt/apache-spark')
-sys.path.insert(0, spark_home + "/python")
-# Add the py4j to the path.
-# You may need to change the version number to match your install
-sys.path.insert(0 ,os.path.join(spark_home, 'python/lib/py4j-0.9-src.zip'))
-# Initialize PySpark to predefine the Spark Context variable 'sc'
-execfile(os.path.join(spark_home, 'python/pyspark/shell.py'))
+spark_home = os.environ.get("SPARK_HOME", '/opt/apache-spark')
+spark_python = os.environ.get("PYTHONPATH", os.path.join(spark_home, "python"))
+
+sys.path.insert(0, spark_home)
+sys.path.insert(0, spark_python)
